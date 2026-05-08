@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Zero Junkies Store</title>
+<link rel="stylesheet" href="store.css"/>
+</head>
+<body>
+
+<div id="store-overlay" class="hidden">
+
+  <!-- Left panel: store identity -->
+  <div id="store-left">
+    <div id="store-brand">
+      <div id="store-logo-icon">🍪</div>
+      <div id="store-name">THE COOKIE JAR</div>
+      <div id="store-tagline">PREMIUM CANNABIS — LS</div>
+    </div>
+
+    <!-- Category filter -->
+    <div id="store-cats">
+      <div class="cat-btn active" data-cat="all">All Products</div>
+      <div class="cat-btn" data-cat="flower">🌿 Flower</div>
+      <div class="cat-btn" data-cat="preroll">🚬 Pre-Rolls</div>
+      <div class="cat-btn" data-cat="edible">🍪 Edibles</div>
+      <div class="cat-btn" data-cat="accessories">🔥 Accessories</div>
+    </div>
+
+    <!-- Cart summary -->
+    <div id="store-cart">
+      <div id="cart-title">YOUR CART</div>
+      <div id="cart-items"></div>
+      <div id="cart-total-row">
+        <span>TOTAL</span>
+        <span id="cart-total">$0</span>
+      </div>
+      <button id="checkout-btn" onclick="checkout()">BUY NOW</button>
+      <button id="clear-btn"    onclick="clearCart()">CLEAR</button>
+    </div>
+  </div>
+
+  <!-- Right panel: product grid -->
+  <div id="store-right">
+
+    <!-- Header -->
+    <div id="store-header">
+      <div id="store-header-left">
+        <div id="store-location-name"></div>
+        <div id="store-header-sub">Browse and add items to your cart</div>
+      </div>
+      <div id="store-balance-wrap">
+        <div id="store-balance-label">CASH</div>
+        <div id="store-balance">$0</div>
+      </div>
+      <button id="store-close-btn" onclick="closeStore()">✕ LEAVE</button>
+    </div>
+
+    <!-- Search -->
+    <div id="store-search-wrap">
+      <input id="store-search" type="text" placeholder="Search items..." oninput="filterItems()" autocomplete="off"/>
+    </div>
+
+    <!-- Product grid -->
+    <div id="product-grid"></div>
+
+  </div>
+
+  <!-- Item detail modal -->
+  <div id="item-modal" class="hidden">
+    <div id="item-modal-box">
+      <div id="modal-icon"></div>
+      <div id="modal-name"></div>
+      <div id="modal-desc"></div>
+      <div id="modal-price"></div>
+      <div id="modal-qty-row">
+        <button onclick="modalQty(-1)">−</button>
+        <span id="modal-qty">1</span>
+        <button onclick="modalQty(1)">+</button>
+      </div>
+      <div id="modal-subtotal"></div>
+      <div id="modal-actions">
+        <button id="modal-add-btn"    onclick="modalAddToCart()">Add to Cart</button>
+        <button id="modal-cancel-btn" onclick="closeModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Purchase confirmation flash -->
+  <div id="purchase-flash" class="hidden">
+    <div id="purchase-flash-inner">
+      <div id="purchase-flash-icon">✓</div>
+      <div id="purchase-flash-msg"></div>
+    </div>
+  </div>
+
+</div><!-- /store-overlay -->
+
+<div id="store-toast"></div>
+
+<script src="store.js"></script>
+</body>
+</html>

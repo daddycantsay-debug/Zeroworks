@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Zero Junkies Tablet</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="overlay" class="hidden">
+    <div id="tablet">
+
+      <!-- Status bar -->
+      <div id="status-bar">
+        <span id="status-icon">📱</span>
+        <span id="status-title">ZERO JUNKIES</span>
+        <span id="status-mood"></span>
+        <button id="close-btn" onclick="closeTablet()">✕</button>
+      </div>
+
+      <!-- Tab bar -->
+      <div id="tab-bar" class="hidden">
+        <button class="tab-btn active" data-tab="main"    onclick="switchTab('main')">🏠 Menu</button>
+        <button class="tab-btn"        data-tab="drugs"   onclick="switchTab('drugs')">💊 Sell</button>
+        <button class="tab-btn"        data-tab="craft"   onclick="switchTab('craft')">🧪 Craft</button>
+        <button class="tab-btn"        data-tab="phone"   onclick="switchTab('phone')">📱 Phone</button>
+        <button class="tab-btn"        data-tab="store"   onclick="switchTab('store')">🌿 Store</button>
+      </div>
+
+      <!-- Content area -->
+      <div id="content">
+
+        <!-- ── GENERIC LIST VIEW ── -->
+        <div id="view-list" class="view hidden">
+          <div id="list-header"></div>
+          <div id="list-subtitle"></div>
+          <div id="list-items"></div>
+        </div>
+
+        <!-- ── SELL MENU ── -->
+        <div id="view-drugs" class="view hidden">
+          <div class="section-title">💊 What are you selling?</div>
+          <div id="mood-bar">
+            <span>Buyer Mood:</span>
+            <div id="mood-track"><div id="mood-fill"></div></div>
+            <span id="mood-label">Neutral</span>
+          </div>
+          <div id="drug-grid"></div>
+        </div>
+
+        <!-- ── DIALOGUE ── -->
+        <div id="view-dialogue" class="view hidden">
+          <div class="section-title">💬 <span id="dialogue-buyer-name">Buyer</span></div>
+          <div id="dialogue-mood-row">
+            Mood: <span id="dialogue-mood-label">Neutral</span>
+          </div>
+          <div id="dialogue-options"></div>
+        </div>
+
+        <!-- ── TRUNK MENU ── -->
+        <div id="view-trunk" class="view hidden">
+          <div class="section-title">🚗 Trunk Options</div>
+          <div id="trunk-lab-status"></div>
+          <div id="trunk-options"></div>
+        </div>
+
+        <!-- ── CRAFT MENU ── -->
+        <div id="view-craft" class="view hidden">
+          <div class="section-title">🧪 Craft Drugs</div>
+          <div id="craft-lab-tag"></div>
+          <div id="craft-list"></div>
+          <!-- Progress bar shown during crafting -->
+          <div id="craft-progress-wrap" class="hidden">
+            <div id="craft-progress-label"></div>
+            <div id="craft-progress-track"><div id="craft-progress-fill"></div></div>
+          </div>
+        </div>
+
+        <!-- ── PHONE ── -->
+        <div id="view-phone" class="view hidden">
+          <div class="section-title">📱 Burner Phone</div>
+          <div id="active-delivery-banner" class="hidden"></div>
+          <div id="contact-list"></div>
+        </div>
+
+        <!-- ── WEED STORE ── -->
+        <div id="view-store" class="view hidden">
+          <div class="section-title">🌿 Smoke Shop</div>
+          <div id="store-grid"></div>
+        </div>
+
+        <!-- ── ROLL MINIGAME ── -->
+        <div id="view-roll" class="view hidden">
+          <div class="section-title">🌀 Roll a Blunt</div>
+          <div id="roll-instruction"></div>
+          <div id="roll-key-display"></div>
+          <div id="roll-timer-track"><div id="roll-timer-fill"></div></div>
+          <div id="roll-steps"></div>
+        </div>
+
+      </div><!-- /content -->
+    </div><!-- /tablet -->
+  </div><!-- /overlay -->
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Zero Junkies — Dialogue</title>
+<link rel="stylesheet" href="dialogue.css"/>
+</head>
+<body>
+
+<div id="dlg-overlay" class="hidden">
+
+  <!-- NPC side -->
+  <div id="dlg-npc-panel">
+
+    <div id="dlg-npc-card">
+      <div id="dlg-npc-avatar">
+        <div id="dlg-npc-icon">👤</div>
+        <div id="dlg-npc-mood-ring"></div>
+      </div>
+      <div id="dlg-npc-info">
+        <div id="dlg-npc-name">Buyer</div>
+        <div id="dlg-npc-type">Unknown</div>
+        <div id="dlg-mood-bar-wrap">
+          <div id="dlg-mood-bar-track">
+            <div id="dlg-mood-bar-fill"></div>
+          </div>
+          <div id="dlg-mood-text">Neutral</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NPC speech bubble -->
+    <div id="dlg-npc-bubble" class="hidden">
+      <div id="dlg-npc-bubble-tail"></div>
+      <div id="dlg-npc-bubble-text"></div>
+    </div>
+
+    <!-- Conversation history (previous lines) -->
+    <div id="dlg-history"></div>
+
+  </div>
+
+  <!-- Player response options -->
+  <div id="dlg-player-panel">
+
+    <div id="dlg-player-header">
+      <span id="dlg-player-label">YOUR RESPONSE</span>
+      <button id="dlg-close-btn" onclick="closeDlg()">✕</button>
+    </div>
+
+    <div id="dlg-options"></div>
+
+    <!-- Player speech bubble (shows after selection) -->
+    <div id="dlg-player-bubble" class="hidden">
+      <div id="dlg-player-bubble-text"></div>
+      <div id="dlg-player-bubble-tail"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="dialogue.js"></script>
+</body>
+</html>
